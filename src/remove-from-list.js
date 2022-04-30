@@ -30,12 +30,8 @@ function removeKFromList(l, k) {
     if (current.value === k) {
       if (prev) {
         prev.next = current.next;
-
-        console.log("#### moved in the middle", current.value);
       } else {
-        prev = current;
-        current = current.next;
-        console.log("#### moved first", prev.value);
+        prev = current.next;
       }
     }
     if (current.value !== k) {
@@ -45,6 +41,7 @@ function removeKFromList(l, k) {
 
     current = current.next;
   }
+  console.log(l);
   return l;
 }
 
@@ -55,7 +52,10 @@ removeKFromList(
       value: 1,
       next: {
         value: 2,
-        next: { value: 3, next: { value: 4, next: { value: 5 } } },
+        next: {
+          value: 3,
+          next: { value: 4, next: { value: 5, next: null } },
+        },
       },
     },
   },

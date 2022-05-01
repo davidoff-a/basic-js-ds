@@ -31,17 +31,17 @@ function removeKFromList(l, k) {
       if (prev) {
         prev.next = current.next;
       } else {
-        prev = current.next;
+        l = current.next;
       }
-    }
-    if (current.value !== k) {
-      console.log(current.value);
+      current = current.next;
+    } else {
       prev = current;
+      current = current.next;
     }
-
-    current = current.next;
   }
   console.log(l);
+  console.log(current);
+  console.log(prev);
   return l;
 }
 

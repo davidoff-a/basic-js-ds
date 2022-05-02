@@ -16,14 +16,14 @@ class treeNode {
 }
 class BinarySearchTree {
   constructor() {
-    this.root = null;
+    this.treeRoot = null;
   }
   root() {
-    return this.root.data;
+    return this.treeRoot ? this.treeRoot : null;
   }
 
   add(data) {
-    this.root = addWithin(this.root, data);
+    this.treeRoot = addWithin(this.treeRoot, data);
 
     function addWithin(node, data) {
       if (!node) {
@@ -43,7 +43,7 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return searchWithin(this.root, data);
+    return searchWithin(this.treeRoot, data);
 
     function searchWithin(node, data) {
       if (!node) {
@@ -59,7 +59,7 @@ class BinarySearchTree {
   }
 
   find(data) {
-    return searchWithin(this.root, data);
+    return searchWithin(this.treeRoot, data);
 
     function searchWithin(node, data) {
       if (!node) {
@@ -75,7 +75,7 @@ class BinarySearchTree {
   }
 
   remove(data) {
-    this.root = removeNode(this.root, data);
+    this.treeRoot = removeNode(this.treeRoot, data);
 
     function removeNode(node, data) {
       if (data < node.data) {
@@ -109,10 +109,10 @@ class BinarySearchTree {
   }
 
   min() {
-    if (!this.root) {
+    if (!this.treeRoot) {
       return;
     }
-    let node = this.root;
+    let node = this.treeRoot;
     while (node.left) {
       node = node.left;
     }
@@ -120,10 +120,10 @@ class BinarySearchTree {
   }
 
   max() {
-    if (!this.root) {
+    if (!this.treeRoot) {
       return;
     }
-    let node = this.root;
+    let node = this.treeRoot;
     while (node.right) {
       node = node.right;
     }
@@ -131,24 +131,24 @@ class BinarySearchTree {
   }
 }
 
-const tree = new BinarySearchTree();
-tree.add(2);
-tree.add(7);
-tree.add(1);
-tree.add(8);
-tree.add(4);
-tree.add(32);
-tree.add(12);
-tree.add(14);
-tree.find(8);
-tree.find(2);
-tree.find(32);
-tree.find(14);
-tree.root();
-tree.min();
-tree.max();
-tree.remove(5);
-tree.has(5);
+// const tree = new BinarySearchTree();
+// tree.add(2);
+// tree.add(7);
+// tree.add(1);
+// tree.add(8);
+// tree.add(4);
+// tree.add(32);
+// tree.add(12);
+// tree.add(14);
+// tree.find(8);
+// tree.find(2);
+// tree.find(32);
+// tree.find(14);
+// tree.root();
+// tree.min();
+// tree.max();
+// tree.remove(4);
+// tree.has(8);
 module.exports = {
   BinarySearchTree,
 };

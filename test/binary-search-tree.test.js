@@ -109,6 +109,8 @@ describe('Binary search tree', () => {
       tree.remove(14);
       tree.remove(8);
       tree.remove(9);
+      console.log(tree.root())
+      console.log(tree.tree)
       assert.strictEqual(tree.has(14), false);
       assert.strictEqual(tree.has(8), false);
       assert.strictEqual(tree.has(9), false);

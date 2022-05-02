@@ -101,9 +101,9 @@ class BinarySearchTree {
       while (minFromRight.left) {
         minFromRight = minFromRight.left;
       }
-      node.value = minFromRight.value;
+      node.data = minFromRight.data;
 
-      node.right = removeNode(node.right, minFromRight.value);
+      node.right = removeNode(node.right, minFromRight.data);
       return node;
     }
   }
@@ -132,23 +132,29 @@ class BinarySearchTree {
 }
 
 // const tree = new BinarySearchTree();
-// tree.add(2);
-// tree.add(7);
-// tree.add(1);
-// tree.add(8);
-// tree.add(4);
-// tree.add(32);
-// tree.add(12);
+// tree.add(9);
 // tree.add(14);
-// tree.find(8);
-// tree.find(2);
-// tree.find(32);
-// tree.find(14);
-// tree.root();
-// tree.min();
-// tree.max();
-// tree.remove(4);
-// tree.has(8);
+// tree.add(2);
+// tree.add(6);
+// tree.add(128);
+// tree.add(8);
+// tree.add(31);
+// tree.add(54);
+// tree.add(1);
+// tree.remove(14);
+// tree.remove(8);
+// tree.remove(9);
+// console.log(tree.root());
+// console.log(tree.treeRoot);
+// console.log("#### has (14)", tree.has(14));
+// console.log("#### has (8)", tree.has(8));
+// console.log("#### has (9)", tree.has(9));
+// console.log("#### has (2)", tree.has(2));
+// console.log("#### has (6)", tree.has(6));
+// console.log("#### has (128)", tree.has(128));
+// console.log("#### has (31)", tree.has(31));
+// console.log("#### has (54)", tree.has(54));
+// console.log("#### has (1)", tree.has(1));
 module.exports = {
   BinarySearchTree,
 };

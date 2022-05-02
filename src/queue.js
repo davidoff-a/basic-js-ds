@@ -26,10 +26,7 @@ class Queue {
     this.length = 0;
   }
   getUnderlyingList() {
-    let current = this.queue;
-    while (current) {
-      current;
-    }
+    return this.queue;
   }
 
   enqueue(value) {

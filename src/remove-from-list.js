@@ -39,28 +39,25 @@ function removeKFromList(l, k) {
       current = current.next;
     }
   }
-  console.log(l);
-  console.log(current);
-  console.log(prev);
   return l;
 }
 
-removeKFromList(
-  {
-    value: 3,
-    next: {
-      value: 1,
-      next: {
-        value: 2,
-        next: {
-          value: 3,
-          next: { value: 4, next: { value: 5, next: null } },
-        },
-      },
-    },
-  },
-  3
-);
+// removeKFromList(
+//   {
+//     value: 3,
+//     next: {
+//       value: 1,
+//       next: {
+//         value: 2,
+//         next: {
+//           value: 3,
+//           next: { value: 4, next: { value: 5, next: null } },
+//         },
+//       },
+//     },
+//   },
+//   3
+// );
 
 module.exports = {
   removeKFromList,

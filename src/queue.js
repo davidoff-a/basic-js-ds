@@ -35,31 +35,37 @@ class Queue {
   enqueue(value) {
     if (this.queue === null) {
       this.queue = new ListNode(value);
-    }
-    if (this.queue !== null) {
+    } else {
       let current = this.queue;
+      let prev = null;
       while (current) {
-        if (current.next === null) {
-          current.next = new ListNode(value);
-        }
+        prev = current;
         current = current.next;
       }
+      current = new ListNode(value);
+      prev.next = current;
     }
   }
 
   dequeue() {
-    while (current) {
-      if (!index) {
-        this.queue = current.next;
-      }
-      index += 1;
+    let current = this.queue;
+    let value = null;
+    if (this.queue.next) {
+      value = current.value;
+      this.queue = this.queue.next;
     }
+    return value;
   }
 }
 
-const queue = new Queue();
-// queue.enqueue();
+// const queue = new Queue();
+// queue.enqueue(5);
+// queue.enqueue(6);
+// queue.enqueue(7);
+// console.log(queue.dequeue());
+// console.log(queue.dequeue());
 
 module.exports = {
   Queue,
+  ListNode,
 };
